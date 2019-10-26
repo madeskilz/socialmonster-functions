@@ -119,7 +119,7 @@ exports.onUserImageChange = functions
 				.then(data => {
 					data.forEach(doc => {
 						const scream = db.doc(`/screams/${doc.id}`);
-						batch.update(scream, { usersImgUrl: change.after.data().imgUrl });
+						batch.update(scream, { userImgUrl: change.after.data().imgUrl });
 					});
 					return userComments.get();
 				})
